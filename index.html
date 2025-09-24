@@ -1,0 +1,2260 @@
+.mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palsure Insurance - Affordable, Trusted, and Fast Insurance in Kenya</title>
+    <meta name="description" content="Access affordable and reliable insurance policies in Kenya. Compare medical, motor, education, and general insurance from trusted providers.">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary-color: #059669;
+            --accent-color: #f59e0b;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --bg-light: #f9fafb;
+            --bg-white: #ffffff;
+            --border-color: #e5e7eb;
+            --danger: #dc2626;
+            --success: #16a34a;
+        }
+
+        /* Dark mode variables */
+        [data-theme="dark"] {
+            --primary-color: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary-color: #10b981;
+            --accent-color: #fbbf24;
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --bg-light: #111827;
+            --bg-white: #1f2937;
+            --border-color: #374151;
+            --danger: #ef4444;
+            --success: #22c55e;
+        }
+
+        /* Dark mode body background */
+        [data-theme="dark"] body {
+            background: linear-gradient(-45deg, #0f172a, #1e293b, #334155, #475569, #64748b, #94a3b8);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        [data-theme="dark"] body::before {
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(147, 197, 253, 0.2) 0%, transparent 50%);
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(-45deg, #1e3a8a, #1d4ed8, #2563eb, #3b82f6, #60a5fa, #93c5fd);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(147, 197, 253, 0.3) 0%, transparent 50%);
+            z-index: -1;
+            animation: floatingBubbles 20s ease-in-out infinite;
+        }
+
+        /* Animated background gradients */
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes floatingBubbles {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.7;
+            }
+            33% {
+                transform: translateY(-30px) rotate(120deg);
+                opacity: 0.4;
+            }
+            66% {
+                transform: translateY(-60px) rotate(240deg);
+                opacity: 0.6;
+            }
+        }
+
+        /* Floating particles animation */
+        .floating-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .particle:nth-child(1) {
+            width: 4px;
+            height: 4px;
+            left: 10%;
+            animation-delay: 0s;
+            animation-duration: 8s;
+        }
+
+        .particle:nth-child(2) {
+            width: 6px;
+            height: 6px;
+            left: 20%;
+            animation-delay: 1s;
+            animation-duration: 12s;
+        }
+
+        .particle:nth-child(3) {
+            width: 3px;
+            height: 3px;
+            left: 30%;
+            animation-delay: 2s;
+            animation-duration: 10s;
+        }
+
+        .particle:nth-child(4) {
+            width: 5px;
+            height: 5px;
+            left: 40%;
+            animation-delay: 3s;
+            animation-duration: 14s;
+        }
+
+        .particle:nth-child(5) {
+            width: 7px;
+            height: 7px;
+            left: 50%;
+            animation-delay: 4s;
+            animation-duration: 9s;
+        }
+
+        .particle:nth-child(6) {
+            width: 4px;
+            height: 4px;
+            left: 60%;
+            animation-delay: 5s;
+            animation-duration: 11s;
+        }
+
+        .particle:nth-child(7) {
+            width: 8px;
+            height: 8px;
+            left: 70%;
+            animation-delay: 6s;
+            animation-duration: 13s;
+        }
+
+        .particle:nth-child(8) {
+            width: 3px;
+            height: 3px;
+            left: 80%;
+            animation-delay: 7s;
+            animation-duration: 15s;
+        }
+
+        .particle:nth-child(9) {
+            width: 6px;
+            height: 6px;
+            left: 90%;
+            animation-delay: 8s;
+            animation-duration: 7s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) scale(1);
+                opacity: 0;
+            }
+        }
+
+        /* Content backgrounds with glass morphism */
+        .hero {
+            background: linear-gradient(135deg, 
+                rgba(37, 99, 235, 0.9), 
+                rgba(29, 78, 216, 0.8),
+                rgba(59, 130, 246, 0.9));
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: heroShimmer 10s linear infinite;
+        }
+
+        @keyframes heroShimmer {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hero * {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: rgba(249, 250, 251, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(229, 231, 235, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+        
+        /* Modern Theme Toggle Button */
+        .theme-toggle {
+            position: relative;
+            width: 60px;
+            height: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 
+                0 2px 10px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.05);
+            box-shadow: 
+                0 4px 20px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .theme-toggle:active {
+            transform: scale(0.95);
+        }
+
+        /* Toggle slider */
+        .theme-toggle::before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 50%;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 
+                0 2px 8px rgba(0, 0, 0, 0.2),
+                0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Sun/Moon icons container */
+        .theme-toggle-content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 6px;
+            z-index: 1;
+        }
+
+        .theme-icon {
+            font-size: 12px;
+            transition: all 0.3s ease;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .theme-icon.sun {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+
+        .theme-icon.moon {
+            opacity: 0.6;
+            transform: scale(0.8) rotate(-30deg);
+        }
+
+        /* Dark mode styles */
+        [data-theme="dark"] .theme-toggle {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            box-shadow: 
+                0 2px 10px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        [data-theme="dark"] .theme-toggle::before {
+            left: 33px;
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+            box-shadow: 
+                0 2px 8px rgba(0, 0, 0, 0.4),
+                0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        [data-theme="dark"] .theme-icon.sun {
+            opacity: 0.6;
+            transform: scale(0.8) rotate(30deg);
+        }
+
+        [data-theme="dark"] .theme-icon.moon {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+            color: #fbbf24;
+        }
+
+        /* Smooth transition for all elements */
+        * {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* Dark mode specific overrides */
+        [data-theme="dark"] .hero {
+            background: linear-gradient(135deg, 
+                rgba(15, 23, 42, 0.9), 
+                rgba(30, 41, 59, 0.8),
+                rgba(51, 65, 85, 0.9));
+        }
+
+        [data-theme="dark"] .how-it-works::before {
+            background: linear-gradient(45deg, 
+                rgba(59, 130, 246, 0.1) 0%, 
+                rgba(37, 99, 235, 0.1) 50%, 
+                rgba(29, 78, 216, 0.1) 100%);
+        }
+
+        [data-theme="dark"] .testimonials::before {
+            background: linear-gradient(-45deg, 
+                rgba(15, 23, 42, 0.1) 0%, 
+                rgba(30, 41, 59, 0.1) 50%, 
+                rgba(51, 65, 85, 0.1) 100%);
+        }
+
+        /* Mobile theme toggle */
+        .mobile-theme-toggle {
+            display: none;
+            margin-top: 1rem;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .theme-toggle {
+                display: none;
+            }
+            
+            .mobile-theme-toggle {
+                display: flex;
+            }
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--bg-white);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        .mobile-menu ul {
+            list-style: none;
+        }
+        
+        .mobile-menu a {
+            display: block;
+            padding: 0.5rem 0;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+        
+        /* Main Content */
+        main {
+            margin-top: 80px;
+        }
+        
+        .page {
+            display: none;
+            min-height: calc(100vh - 80px);
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            background: var(--accent-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 4rem 0;
+            background: rgba(249, 250, 251, 0.7);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .how-it-works::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(37, 99, 235, 0.08) 0%, 
+                rgba(59, 130, 246, 0.08) 50%, 
+                rgba(96, 165, 250, 0.08) 100%);
+            z-index: -1;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--text-primary);
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .step {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .step:hover {
+            transform: translateY(-5px);
+        }
+        
+        .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+        }
+        
+        .step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        /* Insurance Categories */
+        .categories {
+            padding: 4rem 0;
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .category-card {
+            background: var(--bg-white);
+            border: 2px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .category-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .category-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .sub-categories {
+            display: none;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .sub-categories.active {
+            display: block;
+        }
+        
+        .sub-categories ul {
+            list-style: none;
+            text-align: left;
+        }
+        
+        .sub-categories li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+        }
+        
+        .sub-categories li:before {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: var(--secondary-color);
+            margin-right: 0.5rem;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 4rem 0;
+            background: var(--bg-light);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        /* Insurance Partners */
+        .partners {
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .partner-logo {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+        
+        .partner-logo:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        /* Form Styles */
+        .form-section {
+            padding: 4rem 0;
+        }
+        
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 3rem;
+            border-radius: 1rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border-color);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary-color);
+        }
+        
+        .btn-secondary:hover {
+            background: #047857;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .content-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            z-index: -1;
+        }
+        
+        .content-section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+        
+        .content-section h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--text-primary);
+        }
+        
+        .content-section p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        
+        .content-section ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .content-section li {
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+        
+        /* Map Container */
+        .map-container {
+            width: 100%;
+            height: 300px;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            margin: 2rem 0;
+        }
+        
+        .map-placeholder {
+            background: var(--bg-light);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+        }
+        
+        /* Contact Info */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .contact-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--bg-light);
+            border-radius: 0.5rem;
+        }
+        
+        .contact-item h4 {
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        
+        .whatsapp-btn {
+            background: #25d366;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+            margin: 1rem 0;
+            transition: background 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #1da851;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            color: #9ca3af;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .form-container {
+                padding: 2rem;
+                margin: 0 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 2rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            
+            .steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        /* Recommendation Results */
+        .recommendation-results {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-top: 2rem;
+            display: none;
+        }
+        
+        .recommendation-results.active {
+            display: block;
+        }
+        
+        .recommended-policy {
+            background: var(--bg-white);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .policy-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .policy-provider {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .policy-price {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        .policy-features {
+            margin-top: 1rem;
+        }
+        
+        .policy-features ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .policy-features li {
+            padding: 0.25rem 0;
+            color: var(--text-secondary);
+        }
+        
+        .policy-features li:before {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: var(--secondary-color);
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Add floating particles -->
+    <div class="floating-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">Palsure Insurance Agency</a>
+            <ul class="nav-links">
+                <li><a href="#" data-page="homepage" class="nav-link active">Home</a></li>
+                <li><a href="#" data-page="how-it-works" class="nav-link">How It Works</a></li>
+                <li><a href="#" data-page="insurance-categories" class="nav-link">Insurance</a></li>
+                <li><a href="#" data-page="recommendation-tool" class="nav-link">Get Quote</a></li>
+                <li><a href="#" data-page="about-us" class="nav-link">About</a></li>
+                <li><a href="#" data-page="fraud-mitigation" class="nav-link">Security</a></li>
+                <li><a href="#" data-page="contact" class="nav-link">Contact</a></li>
+                <li>
+                    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark/light mode">
+                        <div class="theme-toggle-content">
+                            <i class="fas fa-sun theme-icon sun"></i>
+                            <i class="fas fa-moon theme-icon moon"></i>
+                        </div>
+                    </button>
+                </li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+            <div class="mobile-menu" id="mobileMenu">
+                <ul>
+                    <li><a href="#" data-page="homepage" class="nav-link">Home</a></li>
+                    <li><a href="#" data-page="how-it-works" class="nav-link">How It Works</a></li>
+                    <li><a href="#" data-page="insurance-categories" class="nav-link">Insurance</a></li>
+                    <li><a href="#" data-page="recommendation-tool" class="nav-link">Get Quote</a></li>
+                    <li><a href="#" data-page="about-us" class="nav-link">About</a></li>
+                    <li><a href="#" data-page="fraud-mitigation" class="nav-link">Security</a></li>
+                    <li><a href="#" data-page="contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Homepage -->
+        <div id="homepage" class="page active">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="container">
+                    <h1>Affordable, Trusted, and Fast Insurance in Kenya</h1>
+                    <p>Compare and find the perfect insurance policy tailored to your needs. Save time, money, and protect what matters most.</p>
+                    <a href="#" class="cta-button" data-page="recommendation-tool"><span>Find My Insurance</span></a>
+                </div>
+            </section>
+
+            <!-- How It Works -->
+            <section class="how-it-works">
+                <div class="container">
+                    <h2 class="section-title">How Palsure Works</h2>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <h3>Enter Your Details</h3>
+                            <p>Tell us about your insurance needs - whether it's medical, motor, education, or general insurance.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <h3>Compare Policies</h3>
+                            <p>Our system automatically compares policies from all major Kenyan insurance providers.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <h3>Get Recommendation</h3>
+                            <p>Receive the best policy recommendation based on your specific needs and budget.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Categories -->
+            <section class="categories">
+                <div class="container">
+                    <h2 class="section-title">Insurance Categories</h2>
+                    <div class="categories-grid">
+                        <div class="category-card" onclick="navigateToPage('insurance-categories')">
+                            <div class="category-icon"><i class="fas fa-heartbeat"></i></div>
+                            <h3>Medical Insurance</h3>
+                            <p>Comprehensive health coverage for you and your family</p>
+                        </div>
+                        <div class="category-card" onclick="navigateToPage('insurance-categories')">
+                            <div class="category-icon"><i class="fas fa-car"></i></div>
+                            <h3>Motor Insurance</h3>
+                            <p>Protect your vehicle with our comprehensive motor policies</p>
+                        </div>
+                        <div class="category-card" onclick="navigateToPage('insurance-categories')">
+                            <div class="category-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <h3>Education Insurance</h3>
+                            <p>Secure your educational journey with student-focused plans</p>
+                        </div>
+                        <div class="category-card" onclick="navigateToPage('insurance-categories')">
+                            <div class="category-icon"><i class="fas fa-home"></i></div>
+                            <h3>General Insurance</h3>
+                            <p>Home, travel, and business insurance solutions</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials -->
+            <section class="testimonials">
+                <div class="container">
+                    <h2 class="section-title">What Our Clients Say</h2>
+                    <div class="testimonials-grid">
+                        <div class="testimonial">
+                            <p class="testimonial-text">"Palsure helped me find affordable medical insurance in just minutes. The process was so simple and transparent."</p>
+                            <p class="testimonial-author">- Sarah M., University Student</p>
+                        </div>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"I saved over 30% on my motor insurance by comparing policies through Palsure. Highly recommended!"</p>
+                            <p class="testimonial-author">- James K., Business Owner</p>
+                        </div>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"Finally, a platform that makes insurance simple. No more confusing jargon or hidden fees."</p>
+                            <p class="testimonial-author">- Mary W., Teacher</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Insurance Partners -->
+            <section class="partners">
+                <div class="container">
+                    <h2 class="section-title">Trusted Kenya Insurance Partners</h2>
+                    <div class="partners-grid">
+                        <div class="partner-logo">Jubilee Insurance</div>
+                        <div class="partner-logo">CIC Insurance</div>
+                        <div class="partner-logo">APA Insurance</div>
+                        <div class="partner-logo">ICEA LION</div>
+                        <div class="partner-logo">AAR Insurance</div>
+                        <div class="partner-logo">GA Insurance</div>
+                        <div class="partner-logo">Madison Insurance</div>
+                        <div class="partner-logo">Pioneer Assurance</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- How It Works Page -->
+        <div id="how-it-works" class="page">
+            <section class="content-section">
+                <div class="container">
+                    <h2 class="section-title">How Palsure Works</h2>
+                    
+                    <div class="steps">
+                        <div class="step fade-in">
+                            <div class="step-number">1</div>
+                            <h3>Enter Your Details</h3>
+                            <p>Start by providing basic information about yourself and your insurance needs. This includes your age, occupation, location, and the type of coverage you're looking for. Our smart form adapts based on your responses to gather only relevant information.</p>
+                        </div>
+                        
+                        <div class="step fade-in">
+                            <div class="step-number">2</div>
+                            <h3>AI-Powered Comparison</h3>
+                            <p>Our advanced system automatically searches through policies from all major Kenyan insurance providers. We analyze coverage options, premiums, deductibles, and terms to find policies that match your specific requirements and budget.</p>
+                        </div>
+                        
+                        <div class="step fade-in">
+                            <div class="step-number">3</div>
+                            <h3>Get Your Recommendation</h3>
+                            <p>Within seconds, receive personalized recommendations ranked by value, coverage, and suitability. Each recommendation includes detailed explanations of why it's a good fit for your situation, making it easy to make an informed decision.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 3rem;">
+                        <h3>Why Choose Palsure's Automated System?</h3>
+                        <div style="max-width: 800px; margin: 2rem auto; text-align: left;">
+                            <ul>
+                                <li><strong>Save Time:</strong> No more spending hours calling different insurance companies or visiting multiple offices.</li>
+                                <li><strong>Fraud Protection:</strong> All policies are verified directly with licensed insurance providers.</li>
+                                <li><strong>Unbiased Recommendations:</strong> Our system doesn't favor any particular insurer - we show you the best options.</li>
+                                <li><strong>Transparent Pricing:</strong> See all costs upfront with no hidden fees or surprises.</li>
+                                <li><strong>Expert Support:</strong> Our team is available to help you understand your options and make the right choice.</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="cta-button" data-page="recommendation-tool">Start Your Search Now</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Insurance Categories Page -->
+        <div id="insurance-categories" class="page">
+            <section class="content-section">
+                <div class="container">
+                    <h2 class="section-title">Insurance Categories</h2>
+                    
+                    <div class="categories-grid">
+                        <div class="category-card" onclick="toggleSubCategories(this)">
+                            <div class="category-icon"><i class="fas fa-heartbeat"></i></div>
+                            <h3>Medical Insurance</h3>
+                            <p>Comprehensive healthcare coverage for individuals and families</p>
+                            <div class="sub-categories">
+                                <ul>
+                                    <li>Inpatient Cover - Hospital admission and treatment costs</li>
+                                    <li>Outpatient Cover - Clinic visits, consultations, and minor procedures</li>
+                                    <li>Maternity Cover - Pregnancy and childbirth expenses</li>
+                                    <li>Dental & Optical - Dental care and eye treatment coverage</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="category-card" onclick="toggleSubCategories(this)">
+                            <div class="category-icon"><i class="fas fa-car"></i></div>
+                            <h3>Motor Insurance</h3>
+                            <p>Protection for your vehicle against accidents, theft, and damages</p>
+                            <div class="sub-categories">
+                                <ul>
+                                    <li>Third-Party Only - Basic legal requirement coverage</li>
+                                    <li>Third-Party, Fire & Theft - Enhanced protection against fire and theft</li>
+                                    <li>Comprehensive Cover - Full coverage including own damage</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="category-card" onclick="toggleSubCategories(this)">
+                            <div class="category-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <h3>Education Insurance</h3>
+                            <p>Specialized coverage for students and educational needs</p>
+                            <div class="sub-categories">
+                                <ul>
+                                    <li>Student Health Plans - Medical coverage for students</li>
+                                    <li>Tuition Protection - Safeguard educational investments</li>
+                                    <li>Personal Accident - Coverage for accidents during studies</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="category-card" onclick="toggleSubCategories(this)">
+                            <div class="category-icon"><i class="fas fa-home"></i></div>
+                            <h3>General Insurance</h3>
+                            <p>Diverse insurance solutions for property and lifestyle protection</p>
+                            <div class="sub-categories">
+                                <ul>
+                                    <li>Home Insurance - Property and contents protection</li>
+                                    <li>Travel Insurance - Coverage for domestic and international travel</li>
+                                    <li>Business Insurance - Commercial property and liability coverage</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 3rem;">
+                        <p>Ready to find the perfect policy for your needs?</p>
+                        <a href="#" class="cta-button" data-page="recommendation-tool"><span>Get My Quote</span></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Recommendation Tool Page -->
+        <div id="recommendation-tool" class="page">
+            <section class="form-section">
+                <div class="container">
+                    <h2 class="section-title">Find Your Perfect Insurance Policy</h2>
+                    
+                    <div class="form-container">
+                        <form id="recommendationForm">
+                            <div class="form-group">
+                                <label for="insuranceType">Type of Insurance</label>
+                                <select id="insuranceType" name="insuranceType" required onchange="updateFormFields()">
+                                    <option value="">Select insurance type</option>
+                                    <option value="medical">Medical Insurance</option>
+                                    <option value="motor">Motor Insurance</option>
+                                    <option value="education">Education Insurance</option>
+                                    <option value="general">General Insurance</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="age">Age</label>
+                                <input type="number" id="age" name="age" min="18" max="100" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="location">Location (County)</label>
+                                <select id="location" name="location" required>
+                                    <option value="">Select your county</option>
+                                    <option value="nairobi">Nairobi</option>
+                                    <option value="mombasa">Mombasa</option>
+                                    <option value="kiambu">Kiambu</option>
+                                    <option value="nakuru">Nakuru</option>
+                                    <option value="kajiado">Kajiado</option>
+                                    <option value="machakos">Machakos</option>
+                                    <option value="kisumu">Kisumu</option>
+                                    <option value="uasin-gishu">Uasin Gishu</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="budget">Monthly Budget (KSH)</label>
+                                <select id="budget" name="budget" required>
+                                    <option value="">Select your budget</option>
+                                    <option value="0-2000">KSH 0 - 2,000</option>
+                                    <option value="2000-5000">KSH 2,000 - 5,000</option>
+                                    <option value="5000-10000">KSH 5,000 - 10,000</option>
+                                    <option value="10000-20000">KSH 10,000 - 20,000</option>
+                                    <option value="20000+">KSH 20,000+</option>
+                                </select>
+                            </div>
+
+                            <!-- Medical Insurance Fields -->
+                            <div id="medicalFields" class="conditional-fields" style="display: none;">
+                                <div class="form-group">
+                                    <label for="medicalCoverage">Coverage Type</label>
+                                    <select id="medicalCoverage" name="medicalCoverage">
+                                        <option value="">Select coverage</option>
+                                        <option value="inpatient">Inpatient Only</option>
+                                        <option value="outpatient">Outpatient Only</option>
+                                        <option value="comprehensive">Comprehensive (In + Out)</option>
+                                        <option value="maternity">Include Maternity</option>
+                                        <option value="dental-optical">Include Dental & Optical</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="familySize">Family Size</label>
+                                    <select id="familySize" name="familySize">
+                                        <option value="individual">Individual</option>
+                                        <option value="couple">Couple</option>
+                                        <option value="family-3">Family (3 members)</option>
+                                        <option value="family-4+">Family (4+ members)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Motor Insurance Fields -->
+                            <div id="motorFields" class="conditional-fields" style="display: none;">
+                                <div class="form-group">
+                                    <label for="vehicleType">Vehicle Type</label>
+                                    <select id="vehicleType" name="vehicleType">
+                                        <option value="">Select vehicle type</option>
+                                        <option value="private-car">Private Car</option>
+                                        <option value="motorcycle">Motorcycle</option>
+                                        <option value="commercial">Commercial Vehicle</option>
+                                        <option value="matatu">Matatu</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="vehicleValue">Vehicle Value (KSH)</label>
+                                    <select id="vehicleValue" name="vehicleValue">
+                                        <option value="">Select value range</option>
+                                        <option value="0-500000">Under KSH 500,000</option>
+                                        <option value="500000-1000000">KSH 500,000 - 1,000,000</option>
+                                        <option value="1000000-2000000">KSH 1,000,000 - 2,000,000</option>
+                                        <option value="2000000+">Above KSH 2,000,000</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="drivingExperience">Driving Experience</label>
+                                    <select id="drivingExperience" name="drivingExperience">
+                                        <option value="">Select experience</option>
+                                        <option value="0-2">0-2 years</option>
+                                        <option value="2-5">2-5 years</option>
+                                        <option value="5-10">5-10 years</option>
+                                        <option value="10+">10+ years</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Education Insurance Fields -->
+                            <div id="educationFields" class="conditional-fields" style="display: none;">
+                                <div class="form-group">
+                                    <label for="educationLevel">Education Level</label>
+                                    <select id="educationLevel" name="educationLevel">
+                                        <option value="">Select level</option>
+                                        <option value="university">University</option>
+                                        <option value="college">College/TVET</option>
+                                        <option value="secondary">Secondary School</option>
+                                        <option value="primary">Primary School</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="institution">Institution Type</label>
+                                    <select id="institution" name="institution">
+                                        <option value="">Select type</option>
+                                        <option value="public">Public Institution</option>
+                                        <option value="private">Private Institution</option>
+                                        <option value="international">International Institution</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- General Insurance Fields -->
+                            <div id="generalFields" class="conditional-fields" style="display: none;">
+                                <div class="form-group">
+                                    <label for="generalType">Insurance Type</label>
+                                    <select id="generalType" name="generalType">
+                                        <option value="">Select type</option>
+                                        <option value="home">Home Insurance</option>
+                                        <option value="travel">Travel Insurance</option>
+                                        <option value="business">Business Insurance</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="propertyValue">Property Value (KSH)</label>
+                                    <select id="propertyValue" name="propertyValue">
+                                        <option value="">Select value range</option>
+                                        <option value="0-1000000">Under KSH 1,000,000</option>
+                                        <option value="1000000-5000000">KSH 1,000,000 - 5,000,000</option>
+                                        <option value="5000000-10000000">KSH 5,000,000 - 10,000,000</option>
+                                        <option value="10000000+">Above KSH 10,000,000</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="additionalInfo">Additional Information (Optional)</label>
+                                <textarea id="additionalInfo" name="additionalInfo" placeholder="Any specific requirements or questions?"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn">Get My Recommendations</button>
+                        </form>
+
+                        <!-- Recommendation Results -->
+                        <div id="recommendationResults" class="recommendation-results">
+                            <h3>Your Recommended Policies</h3>
+                            <div id="recommendationsList"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- About Us Page -->
+        <div id="about-us" class="page">
+            <section class="content-section">
+                <div class="container">
+                    <h2>About Palsure Insurance</h2>
+                    
+                    <p>Palsure Insurance is Kenya's leading digital insurance comparison platform, revolutionizing how Kenyans access and purchase insurance. Founded with the mission to make insurance accessible, affordable, and transparent for everyone, we bridge the gap between insurance seekers and providers through innovative technology.</p>
+                    
+                    <h3>Our Mission</h3>
+                    <p>To democratize insurance access in Kenya by providing a transparent, efficient, and user-friendly platform that connects individuals with the most suitable insurance policies from trusted providers.</p>
+                    
+                    <h3>Our Vision</h3>
+                    <p>To become East Africa's most trusted insurance technology platform, empowering millions of people to protect what matters most through smart, accessible insurance solutions.</p>
+                    
+                    <h3>Our Core Values</h3>
+                    <ul>
+                        <li><strong>Transparency:</strong> We believe in clear, honest communication with no hidden fees or complex jargon.</li>
+                        <li><strong>Innovation:</strong> We leverage cutting-edge technology to simplify the insurance experience.</li>
+                        <li><strong>Customer-First:</strong> Every decision we make prioritizes our customers' needs and experiences.</li>
+                        <li><strong>Trust:</strong> We build lasting relationships through reliability, integrity, and consistent service delivery.</li>
+                        <li><strong>Accessibility:</strong> We make insurance available to all Kenyans, regardless of their background or income level.</li>
+                    </ul>
+                    
+                    <h3>Our Objectives</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0;">
+                        <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 0.5rem;">
+                            <h4><i class="fas fa-bullseye" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Affordable Insurance</h4>
+                            <p>Enable people to access insurance policies that fit their budgets without compromising on coverage quality.</p>
+                        </div>
+                        <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 0.5rem;">
+                            <h4><i class="fas fa-clock" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Time Efficiency</h4>
+                            <p>Reduce the time spent searching for insurance brokers and comparing policies from weeks to minutes.</p>
+                        </div>
+                        <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 0.5rem;">
+                            <h4><i class="fas fa-shield-alt" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Fraud Mitigation</h4>
+                            <p>Protect clients from fraudulent insurance schemes through verified partnerships and transparent processes.</p>
+                        </div>
+                        <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 0.5rem;">
+                            <h4><i class="fas fa-robot" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Smart Recommendations</h4>
+                            <p>Automatically match clients with the best insurance policies based on their specific needs and circumstances.</p>
+                        </div>
+                        <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 0.5rem;">
+                            <h4><i class="fas fa-handshake" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Universal Partnership</h4>
+                            <p>Work with all licensed Kenya insurance providers to offer comprehensive coverage options.</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Why Choose Palsure?</h3>
+                    <p>In a market where insurance can be complex and confusing, Palsure stands out by offering:</p>
+                    <ul>
+                        <li>Partnerships with all major Kenyan insurance companies</li>
+                        <li>AI-powered matching system for personalized recommendations</li>
+                        <li>Transparent pricing with no hidden costs</li>
+                        <li>Expert customer support throughout your insurance journey</li>
+                        <li>Secure, verified transactions and policy purchases</li>
+                        <li>Ongoing policy management and claims support</li>
+                    </ul>
+                    
+                    <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: var(--primary-color); color: white; border-radius: 1rem;">
+                        <h3>Ready to Experience the Future of Insurance?</h3>
+                        <p>Join thousands of satisfied Kenyans who have found their perfect insurance coverage through Palsure.</p>
+                        <a href="#" class="cta-button" data-page="recommendation-tool"><span>Get Started Today</span></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Fraud Mitigation Page -->
+        <div id="fraud-mitigation" class="page">
+            <section class="content-section">
+                <div class="container">
+                    <h2>Fraud Protection & Security</h2>
+                    
+                    <p>At Palsure, we take fraud prevention seriously. The insurance industry has unfortunately been plagued by fraudulent schemes that take advantage of unsuspecting customers. We've built comprehensive safeguards to protect you throughout your insurance journey.</p>
+                    
+                    <h3><i class="fas fa-lock" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Our Security Measures</h3>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0;">
+                        <div class="step">
+                            <div class="step-number"><i class="fas fa-check"></i></div>
+                            <h4>Verified Insurance Partners</h4>
+                            <p>We only work with licensed insurance companies registered with the Insurance Regulatory Authority (IRA) of Kenya. Every partner is thoroughly vetted and verified.</p>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number"><i class="fas fa-search"></i></div>
+                            <h4>Real-time Verification</h4>
+                            <p>All policies and quotes are verified directly with insurance providers in real-time, ensuring authenticity and preventing fake policies.</p>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number"><i class="fas fa-shield-alt"></i></div>
+                            <h4>Secure Data Protection</h4>
+                            <p>Your personal and financial information is encrypted using industry-standard SSL technology and stored securely in compliance with data protection laws.</p>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number"><i class="fas fa-file-contract"></i></div>
+                            <h4>Transparent Documentation</h4>
+                            <p>Every policy comes with complete, official documentation directly from the insurance provider. No altered or fake documents.</p>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number"><i class="fas fa-comments"></i></div>
+                            <h4>Direct Communication</h4>
+                            <p>We facilitate direct communication between you and the insurance provider, eliminating middlemen who might manipulate information.</p>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number"><i class="fas fa-university"></i></div>
+                            <h4>Regulatory Compliance</h4>
+                            <p>Palsure operates under strict regulatory oversight and maintains compliance with all Kenyan insurance and financial services regulations.</p>
+                        </div>
+                    </div>
+                    
+                    <h3><i class="fas fa-exclamation-triangle" style="color: var(--danger); margin-right: 0.5rem;"></i> How We Prevent Common Insurance Frauds</h3>
+                    
+                    <div style="background: var(--bg-light); padding: 2rem; border-radius: 1rem; margin: 2rem 0;">
+                        <h4>Fake Insurance Companies</h4>
+                        <p><strong>The Problem:</strong> Fraudsters create fake insurance companies with professional-looking websites and documentation.</p>
+                        <p><strong>Our Solution:</strong> We maintain a database of all IRA-licensed insurers and only display verified companies. Each partner's license status is checked regularly.</p>
+                    </div>
+                    
+                    <div style="background: var(--bg-light); padding: 2rem; border-radius: 1rem; margin: 2rem 0;">
+                        <h4>Inflated Premiums</h4>
+                        <p><strong>The Problem:</strong> Brokers sometimes inflate premiums and pocket the difference.</p>
+                        <p><strong>Our Solution:</strong> Our platform shows actual premiums directly from insurers with complete transparency in pricing breakdown.</p>
+                    </div>
+                    
+                    <div style="background: var(--bg-light); padding: 2rem; border-radius: 1rem; margin: 2rem 0;">
+                        <h4>Hidden Terms & Conditions</h4>
+                        <p><strong>The Problem:</strong> Important policy exclusions or terms are hidden or misrepresented.</p>
+                        <p><strong>Our Solution:</strong> We provide complete, unmodified policy documents and highlight important terms in plain language.</p>
+                    </div>
+                    
+                    <div style="background: var(--bg-light); padding: 2rem; border-radius: 1rem; margin: 2rem 0;">
+                        <h4>Claims Payment Issues</h4>
+                        <p><strong>The Problem:</strong> Fraudulent schemes often fail to pay legitimate claims.</p>
+                        <p><strong>Our Solution:</strong> We only partner with financially stable, reputable insurers with proven track records of claims payment.</p>
+                    </div>
+                    
+                    <h3><i class="fas fa-flag" style="color: var(--danger); margin-right: 0.5rem;"></i> Red Flags We Help You Avoid</h3>
+                    <ul>
+                        <li>Unusually low premiums that seem too good to be true</li>
+                        <li>Pressure to pay immediately without proper documentation</li>
+                        <li>Requests for payment to personal accounts rather than company accounts</li>
+                        <li>Lack of proper company registration or insurance license</li>
+                        <li>Promises of instant coverage without proper underwriting</li>
+                        <li>Unwillingness to provide complete policy documentation</li>
+                    </ul>
+                    
+                    <h3><i class="fas fa-phone" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Report Suspicious Activity</h3>
+                    <p>If you encounter any suspicious insurance offers or believe you've been targeted by fraud, please contact us immediately:</p>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <h4><i class="fas fa-envelope" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Email</h4>
+                            <p>fraud@palsure.co.ke</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4><i class="fab fa-whatsapp" style="color: var(--primary-color); margin-right: 0.5rem;"></i> WhatsApp</h4>
+                            <p>+254 700 123 456</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4><i class="fas fa-phone" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Hotline</h4>
+                            <p>+254 20 123 4567</p>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: var(--secondary-color); color: white; border-radius: 1rem;">
+                        <h3>Your Security is Our Priority</h3>
+                        <p>With Palsure, you can confidently search for and purchase insurance knowing that every step is protected by robust security measures and regulatory compliance.</p>
+                        <a href="#" class="cta-button" data-page="recommendation-tool"><span>Start Your Secure Insurance Search</span></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact" class="page">
+            <section class="form-section">
+                <div class="container">
+                    <h2 class="section-title">Contact Palsure Insurance</h2>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+                        <!-- Contact Form -->
+                        <div>
+                            <h3>Send Us a Message</h3>
+                            <form id="contactForm" style="background: var(--bg-light); padding: 2rem; border-radius: 1rem;">
+                                <div class="form-group">
+                                    <label for="contactName">Full Name</label>
+                                    <input type="text" id="contactName" name="name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contactEmail">Email Address</label>
+                                    <input type="email" id="contactEmail" name="email" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contactPhone">Phone Number</label>
+                                    <input type="tel" id="contactPhone" name="phone" placeholder="+254 7XX XXX XXX" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contactSubject">Subject</label>
+                                    <select id="contactSubject" name="subject" required>
+                                        <option value="">Select subject</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="quote">Insurance Quote</option>
+                                        <option value="claim">Claims Support</option>
+                                        <option value="technical">Technical Issue</option>
+                                        <option value="partnership">Partnership Inquiry</option>
+                                        <option value="complaint">Complaint</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contactMessage">Message</label>
+                                    <textarea id="contactMessage" name="message" placeholder="Please describe how we can help you..." required></textarea>
+                                </div>
+                                
+                                <button type="submit" class="btn">Send Message</button>
+                                
+                                <a href="https://wa.me/254700123456" class="whatsapp-btn" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                                </a>
+                            </form>
+                        </div>
+                        
+                        <!-- Contact Information -->
+                        <div>
+                            <h3>Get in Touch</h3>
+                            
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <h4><i class="fas fa-map-marker-alt" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Office Address</h4>
+                                    <p>Palsure Insurance Ltd<br>
+                                    ABC Place, 5th Floor<br>
+                                    Waiyaki Way<br>
+                                    Westlands, Nairobi<br>
+                                    Kenya</p>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <h4><i class="fas fa-phone" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Phone Numbers</h4>
+                                    <p>Main Line: +254 20 123 4567<br>
+                                    Customer Care: +254 700 123 456<br>
+                                    Claims Hotline: +254 800 123 456</p>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <h4><i class="fas fa-envelope" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Email Addresses</h4>
+                                    <p>General: info@palsure.co.ke<br>
+                                    Claims: claims@palsure.co.ke<br>
+                                    Support: support@palsure.co.ke<br>
+                                    Partnerships: partners@palsure.co.ke</p>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <h4><i class="fas fa-clock" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Business Hours</h4>
+                                    <p>Monday - Friday: 8:00 AM - 6:00 PM<br>
+                                    Saturday: 9:00 AM - 2:00 PM<br>
+                                    Sunday: Closed<br>
+                                    Emergency Claims: 24/7</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Map -->
+                            <div class="map-container">
+                                <div class="map-placeholder">
+                                    <p><i class="fas fa-map-marked-alt" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 1rem; display: block;"></i>
+                                    Interactive Map Loading...<br>
+                                    ABC Place, Waiyaki Way, Westlands, Nairobi</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Palsure Insurance</h4>
+                    <p>Making insurance accessible, affordable, and transparent for all Kenyans.</p>
+                    <p>Licensed by the Insurance Regulatory Authority (IRA) of Kenya</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#" data-page="homepage">Home</a></li>
+                        <li><a href="#" data-page="how-it-works">How It Works</a></li>
+                        <li><a href="#" data-page="insurance-categories">Insurance Types</a></li>
+                        <li><a href="#" data-page="recommendation-tool">Get Quote</a></li>
+                        <li><a href="#" data-page="about-us">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Insurance Categories</h4>
+                    <ul>
+                        <li><a href="#" data-page="insurance-categories">Medical Insurance</a></li>
+                        <li><a href="#" data-page="insurance-categories">Motor Insurance</a></li>
+                        <li><a href="#" data-page="insurance-categories">Education Insurance</a></li>
+                        <li><a href="#" data-page="insurance-categories">General Insurance</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#" data-page="contact">Contact Us</a></li>
+                        <li><a href="#" data-page="fraud-mitigation">Security</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Claims Process</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Palsure Insurance Ltd. All rights reserved. | License No: IRA/LIC/2024/001</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Navigation functionality
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+
+        function navigateToPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show target page
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+            
+            // Update navigation
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+            
+            const targetLink = document.querySelector(`[data-page="${pageId}"]`);
+            if (targetLink) {
+                targetLink.classList.add('active');
+            }
+            
+            // Close mobile menu
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.remove('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Handle navigation clicks
+        document.addEventListener('click', function(e) {
+            if (e.target.hasAttribute('data-page')) {
+                e.preventDefault();
+                const pageId = e.target.getAttribute('data-page');
+                navigateToPage(pageId);
+            }
+        });
+
+        // Toggle sub-categories in insurance categories page
+        function toggleSubCategories(card) {
+            const subCategories = card.querySelector('.sub-categories');
+            const allSubCategories = document.querySelectorAll('.sub-categories');
+            
+            // Close all other sub-categories
+            allSubCategories.forEach(sub => {
+                if (sub !== subCategories) {
+                    sub.classList.remove('active');
+                }
+            });
+            
+            // Toggle current sub-category
+            subCategories.classList.toggle('active');
+        }
+
+        // Update form fields based on insurance type selection
+        function updateFormFields() {
+            const insuranceType = document.getElementById('insuranceType').value;
+            const conditionalFields = document.querySelectorAll('.conditional-fields');
+            
+            // Hide all conditional fields
+            conditionalFields.forEach(field => {
+                field.style.display = 'none';
+            });
+            
+            // Show relevant fields based on selection
+            if (insuranceType) {
+                const targetFields = document.getElementById(insuranceType + 'Fields');
+                if (targetFields) {
+                    targetFields.style.display = 'block';
+                }
+            }
+        }
+
+        // Handle recommendation form submission
+        document.getElementById('recommendationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const insuranceType = formData.get('insuranceType');
+            const age = formData.get('age');
+            const location = formData.get('location');
+            const budget = formData.get('budget');
+            
+            // Simulate recommendation generation
+            generateRecommendations(insuranceType, age, location, budget, formData);
+        });
+
+        function generateRecommendations(insuranceType, age, location, budget, formData) {
+            const resultsContainer = document.getElementById('recommendationResults');
+            const resultsListContainer = document.getElementById('recommendationsList');
+            
+            // Sample recommendations based on insurance type
+            let recommendations = [];
+            
+            if (insuranceType === 'medical') {
+                recommendations = [
+                    {
+                        title: "CIC LifeCare Comprehensive",
+                        provider: "CIC Insurance Group",
+                        price: "KSH 4,500/month",
+                        features: [
+                            "Inpatient cover up to KSH 1,000,000",
+                            "Outpatient cover KSH 50,000",
+                            "Maternity cover included",
+                            "Dental & optical KSH 20,000",
+                            "Emergency evacuation"
+                        ]
+                    },
+                    {
+                        title: "Jubilee Family Health Plan",
+                        provider: "Jubilee Insurance",
+                        price: "KSH 3,800/month",
+                        features: [
+                            "Family coverage up to 5 members",
+                            "Inpatient cover KSH 750,000",
+                            "Outpatient cover KSH 40,000",
+                            "Specialist consultations",
+                            "Pharmacy benefits"
+                        ]
+                    }
+                ];
+            } else if (insuranceType === 'motor') {
+                recommendations = [
+                    {
+                        title: "APA Comprehensive Motor Cover",
+                        provider: "APA Insurance",
+                        price: "KSH 45,000/year",
+                        features: [
+                            "Own damage up to vehicle value",
+                            "Third party unlimited",
+                            "Theft and fire protection",
+                            "Personal accident KSH 500,000",
+                            "24/7 roadside assistance"
+                        ]
+                    },
+                    {
+                        title: "ICEA LION Motor Plus",
+                        provider: "ICEA LION Group",
+                        price: "KSH 38,500/year",
+                        features: [
+                            "Comprehensive coverage",
+                            "Windscreen protection",
+                            "Radio/accessories cover",
+                            "Courtesy car provision",
+                            "Towing services"
+                        ]
+                    }
+                ];
+            } else if (insuranceType === 'education') {
+                recommendations = [
+                    {
+                        title: "Madison Student Protection Plan",
+                        provider: "Madison Insurance",
+                        price: "KSH 2,200/semester",
+                        features: [
+                            "Medical cover KSH 200,000",
+                            "Personal accident KSH 300,000",
+                            "Tuition protection benefits",
+                            "Sports injury coverage",
+                            "Emergency repatriation"
+                        ]
+                    },
+                    {
+                        title: "AAR Student Health Cover",
+                        provider: "AAR Insurance",
+                        price: "KSH 2,800/semester",
+                        features: [
+                            "Comprehensive health cover",
+                            "Dental care included",
+                            "Mental health support",
+                            "Prescription coverage",
+                            "Wellness programs"
+                        ]
+                    }
+                ];
+            } else {
+                recommendations = [
+                    {
+                        title: "GA Home Shield",
+                        provider: "GA Insurance",
+                        price: "KSH 15,000/year",
+                        features: [
+                            "Building cover up to KSH 5,000,000",
+                            "Contents protection",
+                            "Public liability cover",
+                            "Alternative accommodation",
+                            "Garden/landscaping cover"
+                        ]
+                    }
+                ];
+            }
+            
+            // Display recommendations
+            let resultsHTML = '';
+            recommendations.forEach(policy => {
+                resultsHTML += `
+                    <div class="recommended-policy">
+                        <div class="policy-title">${policy.title}</div>
+                        <div class="policy-provider">${policy.provider}</div>
+                        <div class="policy-price">${policy.price}</div>
+                        <div class="policy-features">
+                            <h5>Key Features:</h5>
+                            <ul>
+                                ${policy.features.map(feature => `<li>${feature}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <button class="btn btn-secondary" style="margin-top: 1rem; width: auto; padding: 0.5rem 1rem;" onclick="contactForPolicy('${policy.title}')">
+                            Get This Policy
+                        </button>
+                    </div>
+                `;
+            });
+            
+            resultsListContainer.innerHTML = resultsHTML;
+            resultsContainer.classList.add('active');
+            resultsContainer.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function contactForPolicy(policyTitle) {
+            // Simulate contacting for policy
+            alert(`Thank you for your interest in ${policyTitle}! Our team will contact you within 24 hours to complete your application. You can also reach us directly at +254 700 123 456.`);
+        }
+
+        // Handle contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('contactName').value;
+            const email = document.getElementById('contactEmail').value;
+            const subject = document.getElementById('contactSubject').value;
+            
+            // Simulate form submission
+            alert(`Thank you ${name}! Your message has been received. We will respond to ${email} within 24 hours regarding: ${subject}`);
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add fade-in animation to sections when they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections for animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.step, .category-card, .testimonial');
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+        // Add loading states for better UX
+        function showLoading(element) {
+            element.style.opacity = '0.5';
+            element.style.pointerEvents = 'none';
+        }
+
+        function hideLoading(element) {
+            element.style.opacity = '1';
+            element.style.pointerEvents = 'auto';
+        }
+
+        // Handle window resize for responsive behavior
+        window.addEventListener('resize', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (window.innerWidth > 768) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set default active page
+            navigateToPage('homepage');
+            
+            // Initialize any other components
+            console.log('Palsure Insurance website loaded successfully!');
+        });
+
+        // Utility function to format currency
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('en-KE', {
+                style: 'currency',
+                currency: 'KES'
+            }).format(amount);
+        }
+
+        // Utility function to validate Kenyan phone numbers
+        function validateKenyanPhone(phone) {
+            const kenyanPhoneRegex = /^(\+254|0)[17]\d{8}$/;
+            return kenyanPhoneRegex.test(phone);
+        }
+
+        // Add form validation helpers
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Enhanced form validation
+        function validateForm(formId) {
+            const form = document.getElementById(formId);
+            const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
+            let isValid = true;
+
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    input.style.borderColor = 'var(--danger)';
+                    isValid = false;
+                } else {
+                    input.style.borderColor = 'var(--border-color)';
+                    
+                    // Additional validation for specific fields
+                    if (input.type === 'email' && !validateEmail(input.value)) {
+                        input.style.borderColor = 'var(--danger)';
+                        isValid = false;
+                    }
+                    
+                    if (input.type === 'tel' && !validateKenyanPhone(input.value)) {
+                        input.style.borderColor = 'var(--danger)';
+                        isValid = false;
+                    }
+                }
+            });
+
+            return isValid;
+        }
+
+        // Add real-time validation
+        document.addEventListener('input', function(e) {
+            if (e.target.matches('input, select, textarea')) {
+                if (e.target.value.trim()) {
+                    e.target.style.borderColor = 'var(--success)';
+                } else {
+                    e.target.style.borderColor = 'var(--border-color)';
+                }
+            }
+        });
+
+        // Add keyboard navigation support
+        document.addEventListener('keydown', function(e) {
+            // Handle Enter key on buttons and links
+            if (e.key === 'Enter' && e.target.matches('button, a[href], .category-card')) {
+                e.target.click();
+            }
+            
+            // Handle Escape key to close mobile menu
+            if (e.key === 'Escape') {
+                const mobileMenu = document.getElementById('mobileMenu');
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        // Add print styles handling
+        window.addEventListener('beforeprint', function() {
+            // Expand all sub-categories for printing
+            const subCategories = document.querySelectorAll('.sub-categories');
+            subCategories.forEach(sub => sub.classList.add('active'));
+        });
+
+        window.addEventListener('afterprint', function() {
+            // Restore original state after printing
+            const subCategories = document.querySelectorAll('.sub-categories');
+            subCategories.forEach(sub => sub.classList.remove('active'));
+        });
+    </script>
+
+    <!-- Add Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</body>
+</html>
